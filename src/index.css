@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    
+  }
+}
+html{
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar{
+  width: 8px;
+  background: #1f242d;
+}
+body::-webkit-scrollbar-thumb{
+  background: #00eeff;
+  border-radius: 10px;
+  border-right: 2px solid rgba(6, 182, 212, 0.5);
+  box-shadow: 0px 0 10px 2px #00eeff;
+}
+.text-shadow {
+  text-shadow: 0 0 2rem #00eeff;
+}
+.box-shadow{
+  box-shadow: 0 0 5rem rgba(6, 182, 212, 0.5);
+}
+.box-shadow2{
+  box-shadow: 0px 0 10px 2px #00eeff;
+}
+#name-develop{
+    animation: fadeIn 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
+    transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
+    visibility: visible;
+}
+
+.os-theme-custom {
+  background-color: red; /* Cambia el color de fondo de la barra de desplazamiento */
+}
+.os-theme-custom .os-scrollbar-thumb {
+  background-color: blue; /* Cambia el color del thumb (manija) de la barra de desplazamiento */
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100% {
+      opacity: 1;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+  }
+  @keyframes borderMovement {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .hover\:animate-border:hover .animate-border {
+    animation: borderMovement 3s linear infinite;
+  }
+
+
+  .box-animate {
+    border: 4px solid transparent;
+    padding: 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
+  }
+  
+  .box-animate.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @keyframes snake {
+    0% {
+      border-color: cyan;
+      background-position: left bottom;
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: cyan;
+      background-position: right bottom;
+    }
+
+    
+}
+.tecn:before, .tecn:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 0;
+  background: cyan;
+  transition: .5s;
+}
+.tecn:after{
+  left: 0;
+  bottom: -5px;
+}
+.tecn:before{
+  right: 0;
+  top: -5px;
+}
+.tecn:hover:after, .tecn:hover:before{
+  width: 100%;
+  box-shadow: 0 0 20px cyan;
+  border: none,
+}
+
+/* .box-fly{
+  position: relative;
+} */
+.box-fly img {
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  /* Posición inicial arriba del contenedor */
+   /* Duración y tipo de animación */
+}
+@keyframes fly {
+  0% {
+    transform: translateY(-10px); /* Posición inicial arriba del contenedor */
+  }
+  100% {
+    transform: translateY(10px); /* Posición final abajo del contenedor */
+  }
+}
+
+
+.box-padre:hover .box-hijo{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.box-padre:hover .imgpj{
+  
+  filter:grayscale(0)
+}
+
+
+.box-hijo{
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
