@@ -48,34 +48,61 @@ export const App = () => {
 
                     <ul className="flex place-content-end gap-8 text-lg font-bold text-white max-lg:hidden">
                         <li className="group relative">
-                            <a className="group-hover:text-cyan-500">Home</a>
-                            <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
-                        </li>
-                        <li className="group relative">
-                            <a className="group-hover:text-cyan-500">About</a>
-                            <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
-                        </li>
-                        <li className="group relative">
                             <a className="group-hover:text-cyan-500">
-                                Services
+                                Principal
                             </a>
                             <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </li>
                         <li className="group relative">
-                            <a className="group-hover:text-cyan-500">
-                                Portfolio
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#about"
+                            >
+                                Acerca de mi
                             </a>
                             <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </li>
                         <li className="group relative">
-                            <a className="group-hover:text-cyan-500">Contact</a>
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#servicios"
+                            >
+                                Servicios
+                            </a>
+                            <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+                        </li>
+                        <li className="group relative">
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#habilidades"
+                            >
+                                Habilidades
+                            </a>
+                            <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+                        </li>
+                        <li className="group relative">
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#proyectos"
+                            >
+                                Proyectos
+                            </a>
+                            <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+                        </li>
+                        <li className="group relative">
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#contacto"
+                            >
+                                Contacto
+                            </a>
                             <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </li>
                     </ul>
                 </nav>
             </section>
 
-            <section className="relative flex min-h-screen max-w-full place-content-center items-center overflow-hidden bg-gray-800 bg-[url('./baner3.jpg')] bg-fixed transition-all duration-1000">
+            <section className="relative flex min-h-screen max-w-full place-content-center items-center overflow-hidden bg-gray-800 bg-[url('./assets/baner3.jpg')] bg-fixed transition-all duration-1000">
                 <div className="absolute flex w-4/5 place-content-between place-items-center p-8 max-lg:relative max-lg:flex-col max-lg:gap-8 max-lg:p-0">
                     <div className="flex flex-col font-bold text-white">
                         <h3 className="text-3xl font-bold">Hola, me llamo</h3>
@@ -174,7 +201,10 @@ export const App = () => {
                 </div>
             </section>
 
-            <section className="flex max-w-full place-content-center place-items-center bg-gray-800">
+            <section
+                id="about"
+                className="flex max-w-full place-content-center place-items-center bg-gray-800"
+            >
                 <div className="mb-16 mt-16 flex w-4/5 flex-row gap-8 max-lg:flex-col-reverse">
                     <div className="flex w-1/3 items-center justify-center overflow-hidden max-lg:w-full">
                         <img src="./perfil-foto.jpg" alt="" />
@@ -235,7 +265,10 @@ export const App = () => {
                 </div>
             </section>
 
-            <section className="flex max-w-full place-content-center place-items-center bg-gray-600">
+            <section
+                id="servicios"
+                className="flex max-w-full place-content-center place-items-center bg-gray-600"
+            >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8">
                     <div className="container flex place-content-center text-center text-5xl">
                         <h3 className="text-shadow text-white">
@@ -383,7 +416,10 @@ export const App = () => {
                 </div>
             </section>
 
-            <section className="flex max-w-full place-content-center place-items-center bg-gray-800">
+            <section
+                id="habilidades"
+                className="flex max-w-full place-content-center place-items-center bg-gray-800"
+            >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8">
                     <div className="flex place-content-center text-center text-5xl">
                         <h3 className="text-shadow text-white">
@@ -512,7 +548,10 @@ export const App = () => {
                 </div>
             </section>
 
-            <section className="flex max-w-full place-content-center place-items-center bg-gray-600">
+            <section
+                id="proyectos"
+                className="flex max-w-full place-content-center place-items-center bg-gray-600"
+            >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8 ">
                     <div className="container flex place-content-center text-center text-5xl">
                         <h3 className="text-white">
@@ -602,7 +641,10 @@ export const App = () => {
                 </div>
             </section>
 
-            <section className="flex max-w-full place-content-center place-items-center bg-gray-800">
+            <section
+                id="contacto"
+                className="flex max-w-full place-content-center place-items-center bg-gray-800"
+            >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8">
                     <div className="container flex place-content-center text-center text-5xl">
                         <h3 className="text-white">
