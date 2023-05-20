@@ -48,7 +48,10 @@ export const App = () => {
 
                     <ul className="flex place-content-end gap-8 text-lg font-bold text-white max-lg:hidden">
                         <li className="group relative">
-                            <a className="group-hover:text-cyan-500">
+                            <a
+                                className="group-hover:text-cyan-500"
+                                href="#principal"
+                            >
                                 Principal
                             </a>
                             <span className="absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transform bg-cyan-500 transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -102,7 +105,10 @@ export const App = () => {
                 </nav>
             </section>
 
-            <section className="relative flex min-h-screen max-w-full place-content-center items-center overflow-hidden bg-gray-800 bg-[url('./assets/baner3.jpg')] bg-fixed transition-all duration-1000">
+            <section
+                id="principal"
+                className="relative flex min-h-screen max-w-full place-content-center items-center overflow-hidden bg-gray-800 bg-[url('./assets/baner3.jpg')] bg-fixed transition-all duration-1000"
+            >
                 <div className="absolute flex w-4/5 place-content-between place-items-center p-8 max-lg:relative max-lg:flex-col max-lg:gap-8 max-lg:p-0">
                     <div className="flex flex-col font-bold text-white">
                         <h3 className="text-3xl font-bold">Hola, me llamo</h3>
@@ -195,8 +201,10 @@ export const App = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="flex w-1/3 items-center justify-center overflow-hidden max-lg:w-full">
-                        <img src="./perfil-foto.jpg" alt="" />
+                    <div className="flex w-1/3 place-content-center place-items-center max-lg:w-full">
+                        <div className="box-shadow2 flex h-1/3 w-full overflow-hidden  rounded-[50%] bg-[rgb(30,41,59,0.8)]">
+                            <img src="./fondo-perfil.png" alt="" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -206,8 +214,12 @@ export const App = () => {
                 className="flex max-w-full place-content-center place-items-center bg-gray-800"
             >
                 <div className="mb-16 mt-16 flex w-4/5 flex-row gap-8 max-lg:flex-col-reverse">
-                    <div className="flex w-1/3 items-center justify-center overflow-hidden max-lg:w-full">
-                        <img src="./perfil-foto.jpg" alt="" />
+                    <div className="flex w-1/3 place-content-center place-items-center items-center overflow-hidden rounded-xl object-cover max-lg:w-full">
+                        <img
+                            src="./about.png"
+                            alt="perfil"
+                            className="object-cover"
+                        />
                     </div>
                     <div className="flex w-2/3 flex-col place-content-center place-items-center max-lg:w-full">
                         <h1 className="w-2/3 text-center text-5xl text-white">
@@ -253,14 +265,13 @@ export const App = () => {
                                 .
                             </p>
                         </div>
-                        {/* <div className="mt-8 flex w-full place-content-center place-items-center">
+                        <div className="mt-8 flex w-full place-content-center place-items-center">
                             <iframe
                                 width="960"
                                 height="500"
                                 src="https://youtube.com/embed/pf4Oo2ZlGjU"
-                                
                             ></iframe>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </section>
