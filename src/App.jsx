@@ -265,13 +265,13 @@ export const App = () => {
                                 .
                             </p>
                         </div>
-                        <div className="mt-8 flex w-full place-content-center place-items-center">
+                        {/* <div className="mt-8 flex w-full place-content-center place-items-center">
                             <iframe
                                 width="960"
                                 height="500"
                                 src="https://youtube.com/embed/pf4Oo2ZlGjU"
                             ></iframe>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
