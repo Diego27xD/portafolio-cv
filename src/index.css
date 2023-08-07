@@ -13,9 +13,10 @@ html{
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar{
-  width: 8px;
+  width: 4px;
   background: #1f242d;
 }
+
 body::-webkit-scrollbar-thumb{
   background: #00eeff;
   border-radius: 10px;
@@ -31,10 +32,13 @@ body::-webkit-scrollbar-thumb{
 .box-shadow2{
   box-shadow: 0px 0 10px 2px #00eeff;
 }
-#name-develop{
+/* #name-develop{
     animation: fadeIn 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
     transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
     visibility: visible;
+} */
+#nombre_perfil{
+  font-size: 96px;
 }
 
 .os-theme-custom {
@@ -42,6 +46,9 @@ body::-webkit-scrollbar-thumb{
 }
 .os-theme-custom .os-scrollbar-thumb {
   background-color: blue; /* Cambia el color del thumb (manija) de la barra de desplazamiento */
+}
+body{
+  background-color: rgb(31,41, 55,1);
 }
 
 @keyframes fadeIn {

@@ -3,6 +3,7 @@ import { LogoFb } from "./design/logo-fb";
 import { useState, useRef, useEffect } from "react";
 import LogoLn from "./design/logo-ln";
 import LogoGh from "./design/logo-gh";
+import Aos from "aos";
 import { motion } from "framer-motion";
 
 export const App = () => {
@@ -34,13 +35,16 @@ export const App = () => {
             border: "6px solid transparent",
         },
     };
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
     return (
         <>
             <section
                 className="container flex max-w-full place-content-center bg-gray-800"
                 id="inicio"
             >
-                <nav className="flex w-4/5 place-content-between items-center p-8">
+                <nav className="flex w-4/5 place-content-between items-center p-12">
                     <h3 className="text-2xl font-bold text-white max-lg:block">
                         Hello, Welcome site!{" "}
                         <span className="text-2xl text-cyan-500">ツ</span>
@@ -107,20 +111,26 @@ export const App = () => {
 
             <section
                 id="principal"
-                className="relative flex min-h-screen max-w-full place-content-center items-center overflow-hidden bg-gray-800 bg-[url('./assets/baner3.jpg')] bg-fixed transition-all duration-1000"
+                data-aos="fade-down"
+                className="flex w-full place-content-center items-center overflow-hidden bg-gray-600 transition-all duration-1000"
             >
-                <div className="absolute flex w-4/5 place-content-between place-items-center p-8 max-lg:relative max-lg:flex-col max-lg:gap-8 max-lg:p-0">
+                <div className="mb-24 mt-24 flex w-4/5  place-content-between place-items-center p-8 max-lg:relative max-lg:flex-col max-lg:gap-8 max-lg:p-0 max-lg:text-center">
                     <div className="flex flex-col font-bold text-white">
-                        <h3 className="text-3xl font-bold">Hola, me llamo</h3>
-                        <h1
-                            id="name-develop"
-                            className="text-shadow text-8xl font-bold"
-                        >
+                        <h3 className="text-3xl font-bold max-lg:text-xl">
+                            Hola, me llamo
+                        </h3>
+                        <br />
+                        <h1 className="text-shadow text-8xl max-lg:text-5xl">
                             DIEGO FLORES
                         </h1>
-                        <h3 className="block text-3xl" id="info">
+                        <br />
+
+                        <h3 className="text-3xl max-lg:text-xl" id="info">
                             y soy{" "}
-                            <span className="text-shadow text-3xl text-cyan-500">
+                        </h3>
+                        <br />
+                        <h3 className=" text-3xl max-lg:text-xl">
+                            <span className="text-shadow text-3xl text-[#00eeff] max-lg:hidden max-lg:text-center">
                                 <Typewriter
                                     options={{ loop: true }}
                                     onInit={(typewriter) => {
@@ -134,8 +144,11 @@ export const App = () => {
                                     }}
                                 />
                             </span>
+                            <h3 className="text-shadow hidden text-3xl text-cyan-500 max-lg:block max-lg:text-center">
+                                Diseñador y Desarrollador de Software
+                            </h3>
                         </h3>
-                        <div className="mt-8 flex gap-8">
+                        <div className="mt-8 flex gap-8 max-lg:justify-center">
                             <article
                                 onMouseEnter={() => handleMouseEnter("item1")}
                                 onMouseLeave={() => handleMouseLeave("item1")}
@@ -191,7 +204,7 @@ export const App = () => {
                                 </a>
                             </article>
                         </div>
-                        <div className="mt-8 flex cursor-pointer">
+                        <div className="mt-8 flex cursor-pointer max-lg:justify-center">
                             <a
                                 href="./CV-PROFESIONAL-DF.pdf"
                                 download
@@ -201,10 +214,12 @@ export const App = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="flex w-1/3 place-content-center place-items-center max-lg:w-full">
-                        <div className="box-shadow2 flex h-1/3 w-full overflow-hidden  rounded-[50%] bg-[rgb(30,41,59,0.8)]">
-                            <img src="./fondo-perfil.png" alt="" />
-                        </div>
+                    <div className="flex items-center justify-center max-lg:w-full">
+                        <img
+                            className="block h-[500px] w-[500px] object-cover"
+                            src="./fondo-perfil.webp"
+                            alt="perfil.png"
+                        />
                     </div>
                 </div>
             </section>
@@ -212,11 +227,12 @@ export const App = () => {
             <section
                 id="about"
                 className="flex max-w-full place-content-center place-items-center bg-gray-800"
+                data-aos="fade-down"
             >
                 <div className="mb-16 mt-16 flex w-4/5 flex-row gap-8 max-lg:flex-col-reverse">
                     <div className="flex w-1/3 place-content-center place-items-center items-center overflow-hidden rounded-xl object-cover max-lg:w-full">
                         <img
-                            src="./about.png"
+                            src="./about.webp"
                             alt="perfil"
                             className="object-cover"
                         />
@@ -225,7 +241,7 @@ export const App = () => {
                         <h1 className="w-2/3 text-center text-5xl text-white">
                             ACERCA DE <span className="text-cyan-500">MI</span>
                         </h1>
-                        <div className="text-shadow text-3xl text-cyan-500">
+                        <div className="text-shadow text-3xl text-cyan-500 max-lg:text-center">
                             <Typewriter
                                 options={{ loop: true }}
                                 onInit={(typewriter) => {
@@ -278,7 +294,7 @@ export const App = () => {
 
             <section
                 id="servicios"
-                className="flex max-w-full place-content-center place-items-center bg-gray-600"
+                className="flex max-w-full place-content-center place-items-center overflow-hidden bg-gray-600"
             >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8">
                     <div className="container flex place-content-center text-center text-5xl">
@@ -429,7 +445,7 @@ export const App = () => {
 
             <section
                 id="habilidades"
-                className="flex max-w-full place-content-center place-items-center bg-gray-800"
+                className="flex max-w-full place-content-center place-items-center "
             >
                 <div className="mb-16 mt-16 flex w-4/5 flex-col place-content-center place-items-center gap-8">
                     <div className="flex place-content-center text-center text-5xl">
@@ -440,7 +456,10 @@ export const App = () => {
                     </div>
                     <div className="flex flex-grow place-content-between place-items-center gap-8 max-lg:flex-col max-lg:gap-12 max-lg:p-4">
                         <div className="flex flex-grow flex-col place-content-center place-items-center gap-12 ">
-                            <article className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-transparent p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col">
+                            <article
+                                data-aos="fade-right"
+                                className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-transparent p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col"
+                            >
                                 <div className="flex flex-col place-content-center place-items-center gap-4">
                                     <img
                                         src="./icos/nodejs-icon.svg"
@@ -466,7 +485,10 @@ export const App = () => {
                                     <h3>Django</h3>
                                 </div>
                             </article>
-                            <article className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-gray-600 p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col">
+                            <article
+                                data-aos="fade-right"
+                                className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-gray-600 p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col"
+                            >
                                 <div className="flex flex-col place-items-center gap-4">
                                     <img
                                         src="./icos/postgresql-icon.svg"
@@ -502,7 +524,10 @@ export const App = () => {
                         </div>
 
                         <div className="flex flex-col place-content-center place-items-center gap-12">
-                            <article className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-gray-600 p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col">
+                            <article
+                                data-aos="fade-left"
+                                className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-gray-600 p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col"
+                            >
                                 <div className="flex flex-col place-items-center gap-4">
                                     <img
                                         src="./icos/web-icon.svg"
@@ -528,7 +553,10 @@ export const App = () => {
                                     <h3>HTML</h3>
                                 </div>
                             </article>
-                            <article className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-transparent p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col">
+                            <article
+                                data-aos="fade-left"
+                                className="box-shadow2 flex flex-row place-content-between gap-16 rounded-full bg-transparent p-12 text-white shadow-lg transition duration-300 hover:scale-105 hover:border-2 hover:border-b-4 hover:border-cyan-400 hover:text-cyan-400 max-sm:flex-col"
+                            >
                                 <div className="flex flex-col place-items-center gap-4">
                                     <img
                                         src="./icos/amazon_aws-ar21.svg"
@@ -572,7 +600,7 @@ export const App = () => {
                     <div className="flex w-full flex-row gap-8 max-lg:flex-col max-lg:gap-8 ">
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./proyecto1.png"
+                                src="./proyecto1.webp"
                                 alt="imagen.png"
                                 className="imgpj  h-80 object-contain grayscale-[1] transition duration-300"
                             />
@@ -585,7 +613,7 @@ export const App = () => {
                         </div>
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./projecto2.png"
+                                src="./projecto2.webp"
                                 alt="imagen.png"
                                 className="imgpj  h-80 object-contain grayscale-[1] transition duration-300"
                             />
@@ -596,7 +624,7 @@ export const App = () => {
                         </div>
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./proyecto3.png"
+                                src="./proyecto3.webp"
                                 alt="imagen.png"
                                 className="imgpj  h-80 object-contain grayscale-[1] transition duration-300"
                             />
@@ -613,7 +641,7 @@ export const App = () => {
                     <div className="flex w-full flex-row gap-8 max-lg:flex-col max-lg:gap-8">
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./proyecto4.png"
+                                src="./proyecto4.webp"
                                 alt="imagen.png"
                                 className="imgpj h-80 object-contain grayscale-[1] transition duration-300"
                             />
@@ -624,7 +652,7 @@ export const App = () => {
                         </div>
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./proyecto5.png"
+                                src="./proyecto5.webp"
                                 alt="imagen.png"
                                 className="imgpj h-80 object-contain grayscale-[1] transition duration-300"
                             />
@@ -637,7 +665,7 @@ export const App = () => {
                         </div>
                         <div className="box-padre box-shadow2 relative flex h-2/5 w-1/3 flex-col overflow-hidden max-lg:w-full">
                             <img
-                                src="./proyecto6.png"
+                                src="./proyecto6.webp"
                                 alt="imagen.png"
                                 className="imgpj h-80 w-full object-contain grayscale-[1] transition duration-300"
                             />
@@ -777,7 +805,7 @@ export const App = () => {
                     <div className="box-shadow2 flex h-12 w-12 cursor-pointer place-content-center place-items-center rounded-lg bg-cyan-400">
                         <a href="#inicio">
                             <img
-                                src="./flecha2.png"
+                                src="./flecha2.webp"
                                 alt="flecha"
                                 className="h-6 w-8"
                             />
