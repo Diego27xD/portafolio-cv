@@ -517,7 +517,7 @@ export const App = () => {
                         </div>
                         <div>
                             <img
-                                src="./laptop.png"
+                                src="./laptop.webp"
                                 alt=""
                                 className="transition duration-300 hover:scale-105 max-lg:hidden"
                             />
